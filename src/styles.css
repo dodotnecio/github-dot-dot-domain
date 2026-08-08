@@ -1,0 +1,105 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  /* Brand */
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-cream: var(--cream);
+  --color-warm: var(--warm);
+  --color-brown-soft: var(--brown-soft);
+  --color-type-birthday: var(--type-birthday);
+  --color-type-medical: var(--type-medical);
+  --color-type-calamity: var(--type-calamity);
+  --color-type-maternity: var(--type-maternity);
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.985 0.012 80);
+  --foreground: oklch(0.25 0.04 50);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.04 50);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.04 50);
+  --primary: oklch(0.36 0.07 45);
+  --primary-foreground: oklch(0.985 0.012 80);
+  --secondary: oklch(0.93 0.04 75);
+  --secondary-foreground: oklch(0.36 0.07 45);
+  --muted: oklch(0.94 0.02 75);
+  --muted-foreground: oklch(0.48 0.05 55);
+  --accent: oklch(0.78 0.13 75);
+  --accent-foreground: oklch(0.25 0.04 50);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.85 0.05 70);
+  --input: oklch(0.88 0.04 70);
+  --ring: oklch(0.78 0.13 75);
+
+  /* Brand tokens */
+  --brand: #6B3A1F;
+  --brand-dark: #4A2710;
+  --gold: #C9973A;
+  --gold-soft: #E4C9A8;
+  --cream: #FBF6F0;
+  --warm: #FDF6EE;
+  --brown-soft: #9C7355;
+  --type-birthday: #D97706;
+  --type-medical: #DC2626;
+  --type-calamity: #2563EB;
+  --type-maternity: #A21CAF;
+}
+
+.dark {
+  --background: oklch(0.18 0.02 50);
+  --foreground: oklch(0.97 0.01 70);
+  --card: oklch(0.22 0.03 50);
+  --card-foreground: oklch(0.97 0.01 70);
+  --primary: oklch(0.78 0.13 75);
+  --primary-foreground: oklch(0.2 0.04 50);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { background-color: var(--color-cream); color: var(--color-foreground); font-family: var(--font-sans); }
+  h1, h2, h3 { font-family: var(--font-serif); color: var(--color-brand); }
+}
+
+@utility card-spartan {
+  background: #fff;
+  border: 1px solid var(--color-gold-soft);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(107, 58, 31, 0.08), 0 4px 12px rgba(107, 58, 31, 0.04);
+}
