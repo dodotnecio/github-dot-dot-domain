@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import type { View } from "./types";
 import type { Role, ProfileRow } from "@/lib/use-auth";
 import { supabase } from "@/integrations/supabase/client";
-import logoAsset from "@/assets/spartans-legacy-logo.png.asset.json";
+import logoAsset from "@/assets/spartans-legacy-logo.png";
 
 interface Props {
   view: View;
@@ -68,7 +68,7 @@ export function Nav({ view, go, role, profile }: Props) {
       <div className="bg-[var(--color-brand)] text-white">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
           <button onClick={() => go("home")} className="flex items-center gap-2 font-serif text-[var(--color-gold)] text-xl font-bold">
-            <img src={logoAsset.url} alt="Team Spartans Legacy logo" className="w-8 h-8 object-contain" /> SPARTANS LEGACY
+            <img src={logoAsset} alt="Team Spartans Legacy logo" className="w-8 h-8 object-contain" /> SPARTANS LEGACY
           </button>
           <div className="flex items-center gap-1">
             <Dropdown label="Pages">

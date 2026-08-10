@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { TYPES, peso, type AssistType } from "@/lib/spartans";
-import logoAsset from "@/assets/spartans-legacy-logo.png.asset.json";
+import logoAsset from "@/assets/spartans-legacy-logo.png";
 
 interface FundData { total: number; recipients: number }
 
@@ -56,7 +56,7 @@ export function Home() {
   return (
     <main className="max-w-[760px] mx-auto px-4 py-7">
       <header className="text-center">
-        <img src={logoAsset.url} alt="Team Spartans Legacy logo" className="mx-auto w-40 h-40 object-contain" />
+        <img src={logoAsset} alt="Team Spartans Legacy logo" className="mx-auto w-40 h-40 object-contain" />
         <h1 className="font-serif text-3xl font-bold text-[var(--color-brand)] mt-2">SPARTANS LEGACY</h1>
         <p className="text-sm text-[var(--color-brown-soft)] mt-1">Stronger Together</p>
         <div className="mx-auto mt-3 h-[3px] w-[60px] bg-[var(--color-gold)] rounded-full" />
