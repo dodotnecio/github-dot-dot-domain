@@ -94,7 +94,7 @@ function LoginForm({ go, onAuth }: { go: (v: View) => void; onAuth: () => Promis
 
   async function sendReset() {
     const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
-      redirectTo: window.location.origin,
+      redirectTo: `${window.location.origin}${import.meta.env.BASE_URL}`,
     });
     setMsg(error ? { kind: "err", text: error.message } : { kind: "ok", text: "Reset email sent." });
   }
