@@ -6,7 +6,7 @@ import tsConfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
 
 export default defineConfig({
-  base: "/github-dot-dot-domain/",
+  base: "/spartans-legacy/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
